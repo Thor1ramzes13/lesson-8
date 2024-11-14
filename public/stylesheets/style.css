@@ -322,3 +322,32 @@ h6 {
 .register-form__submit:hover {
   background-color: #0056b3;
 }
+
+.register-form__select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  -webkit-appearance: none; /* Убираем дефолтную стрелку */
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.register-form__select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.register-form__select option {
+  color: #333;
+  background-color: #fff;
+  padding: 8px;
+}

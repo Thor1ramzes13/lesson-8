@@ -9,7 +9,7 @@ class ConvictsDBService {
 				const data = await mongoose.model('Convict').find().exec()
 				return data
 			}
-			return (await Convict.find(filters)) ?? []
+			return (await Convict.find(filters).populate('hierarchy')) ?? []
 		} catch (error) {
 			return []
 		}

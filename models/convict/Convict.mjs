@@ -32,6 +32,12 @@ const convictSchema = new Schema({
 		minlength: [20, 'Name must be at least 2 characters long'],
 		maxlength: [500, 'Name must be at most 500 characters long'],
 		trim: true
+	},
+	hierarchy: {
+		type: Schema.Types.ObjectId,
+		ref: 'Hierarchy',
+		required: [true, 'Hierarchy is required'],
+		trim: true
 	}
 })	
 

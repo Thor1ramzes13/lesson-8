@@ -42,6 +42,7 @@
             <th class="convict-table__header">Name</th>
             <th class="convict-table__header">Age</th>
             <th class="convict-table__header">Years</th>
+            <th class="convict-table__header">Hierarchy</th>
             <th class="convict-table__header">Description</th>
             <th class="convict-table__header">Actions</th>
           </tr>
@@ -52,6 +53,7 @@
             <td class="convict-table__data"><%= convict.name %></td>
             <td class="convict-table__data"><%= convict.age %></td>
             <td class="convict-table__data"><%= convict.years %></td>
+            <td class="convict-table__data"><%= convict.hierarchy?.type %></td>
             <td class="convict-table__data"><%= convict.description %></td>
             <td class="convict-table__actions">
               <a class="convict-table__edit" href="/convicts/convictForm/<%= convict.id %>">Edit</a>
