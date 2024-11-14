@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Prison Convict List</title>
+    <script src="/javascripts/RequestManager.js"></script>
+  </head>
+  <body class="prison-page">
+    <%- include('sections/header') %>
+    <div class="convict-container">
+      <form class="convict-filter" method='get' action="/convicts">
+        <h3 class="convict-filter__title">Фильтр заключенных</h3>
+        <div class="convict-filter__fields">
+          <input
+            type="text"
+            class="convict-filter__input"
+            name="name"
+            placeholder="Поиск по имени"
+          />
+          <input
+            type="number"
+            class="convict-filter__input"
+            name="age"
+            placeholder="Поиск по возрасту"
+          />
+          <input
+            type="number"
+            class="convict-filter__input"
+            name="years"
+            placeholder="Поиск по годам"
+          />
+          <button type="submit" class="convict-filter__button">Применить</button>
+          <a href="/convicts"><button class="convict-filter__button">Сбросить</button></a>
+        </div>
+      </form>
+      <table class="convict-table">
+        <h2 class="convict-table__title">Список наших мешканців</h2>
+        <thead class="convict-table__head">
+          <tr class="convict-table__row">
+            <th class="convict-table__header">Name</th>
+            <th class="convict-table__header">Age</th>
+            <th class="convict-table__header">Years</th>
+            <th class="convict-table__header">Description</th>
+            <th class="convict-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="convict-table__body">
+          <% convicts.forEach(convict => { %>
+          <tr class="convict-table__row" data-id="<%= convict.id %>">
+            <td class="convict-table__data"><%= convict.name %></td>
+            <td class="convict-table__data"><%= convict.age %></td>
+            <td class="convict-table__data"><%= convict.years %></td>
+            <td class="convict-table__data"><%= convict.description %></td>
+            <td class="convict-table__actions">
+              <a class="convict-table__edit" href="/convicts/convictForm/<%= convict.id %>">Edit</a>
+              <button
+                class="convict-table__delete"
+                onclick="RequestManager.deleteRequest('/convicts', '<%= convict.id %>' )"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <hr class="convict-container__divider" />
+      <a class="convict-container__add-link" href="/convicts/convictForm">Add convict</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Register page</title>
+  </head>
+  <body>
+    <%- include('sections/header', { title: 'Convict form' }) %>
+    <div class="register-page">
+      <hr class="register-page__divider" />
+      
+      <% if (errors?.length > 0) { %>
+      <ul class="register-page__error-list">
+        <% errors.forEach(function(error) { %>
+        <li class="register-page__error-item"><%= error.msg %></li>
+        <% }) %>
+      </ul>
+      <hr class="register-page__divider" />
+      <% } %>
+
+      <form
+        class="register-form"
+        action="/convicts/convictForm<%= data?.id ? '/' + data.id : '' %>"
+        method="post"
+      >
+        <input
+          class="register-form__input"
+          type="text"
+          name="name"
+          placeholder="Name"
+          value="<%= data ? data.name : '' %>"
+        />
+        <input
+          class="register-form__input"
+          type="number"
+          name="age"
+          placeholder="Age"
+          value="<%= data ? data.age : '' %>"
+        />
+        <input
+          class="register-form__input"
+          type="number"
+          name="years"
+          placeholder="Years"
+          value="<%= data ? data.years : '' %>"
+        />
+        <input
+          class="register-form__input"
+          type="text"
+          name="description"
+          placeholder="Description"
+          value="<%= data ? data.description : '' %>"
+        />
+        <button class="register-form__submit" type="submit">Register</button>
+      </form>
+			<a class="register-page__back" href="/convicts">Back</a>
+    </div>
+  </body>
+</html>

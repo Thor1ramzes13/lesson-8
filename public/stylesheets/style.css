@@ -1,0 +1,324 @@
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('../images/jail.png') 0 0 repeat;
+  background-color: #afafafc9;
+}
+
+/* null */
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+*::before,
+*::after {
+	display: inline-block;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+input,
+textarea {
+	width: 100%;
+}
+
+label {
+	display: inline-block;
+}
+
+button,
+select,
+option {
+	cursor: pointer;
+}
+a {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+.header {
+  height: 80px;
+  margin: 10px 5px;
+  background-color: #ffdcdcdc;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  gap: 10px;
+}
+.menu__link {
+  color: #0d6d05;
+  transition: color 0.3s ease 0s;
+  @media (any-hover: hover){
+    &:hover{
+      color: #9c7406;
+    }
+  }
+}
+.main__body {
+  text-align: center;
+  
+  
+}
+.main__title {
+  color: #0a40d4;
+  font-size: 48px;
+  font-weight: 700;
+}
+.main__text {
+  font-size: 24px;
+  color: #9b0575;
+}
+
+
+
+/* convict list*/
+.convict-container {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.convict-table__title {
+  font-size: 24px;
+  text-align: center;
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.convict-container__divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+.convict-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.convict-table__head {
+  background-color: #333;
+}
+
+.convict-table__row {
+  border-bottom: 1px solid #444;
+}
+
+.convict-table__header,
+.convict-table__data {
+  padding: 12px;
+  text-align: left;
+}
+
+.convict-table__header {
+  font-weight: bold;
+  color: #ffa500;
+}
+
+.convict-table__data {
+  color: #e0e0e0;
+}
+
+.convict-table__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.convict-table__edit,
+.convict-table__delete {
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.convict-table__edit {
+  background-color: #ffa500;
+}
+
+.convict-table__edit:hover {
+  background-color: #cc8400;
+}
+
+.convict-table__delete {
+  background-color: #d9534f;
+  border: none;
+  cursor: pointer;
+}
+
+.convict-table__delete:hover {
+  background-color: #c9302c;
+}
+
+.convict-container__add-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.convict-container__add-link:hover {
+  background-color: #45a049;
+}
+
+/* Filter*/
+.convict-filter {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.convict-filter__title {
+  font-size: 18px;
+  color: #ffa500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.convict-filter__fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.convict-filter__input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+}
+
+.convict-filter__input::placeholder {
+  color: #999;
+}
+
+.convict-filter__button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.convict-filter__button:hover {
+  background-color: #cc8400;
+}
+
+
+
+/* Register page */
+.register-page {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.register-page__divider {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.register-page__error-list {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.register-page__error-item {
+  color: #dc3545;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.register-form__input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.register-form__input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.register-page__back,
+.register-form__submit {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.register-page__back:hover,
+.register-form__submit:hover {
+  background-color: #0056b3;
+}
