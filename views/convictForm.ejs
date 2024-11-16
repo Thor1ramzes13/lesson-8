@@ -53,10 +53,15 @@
           placeholder="Description"
           value="<%= data ? data.description : '' %>"
         />
-        <select name="hierarchy" class="register-form__select" >
+        <select name="hierarchy" class="register-form__select">
           <% hierarchies.forEach(hierarchy => { %>
-            <option value="<%= hierarchy._id  %>"><%= hierarchy.type %></option>
-            <%})%>
+            <option 
+              value="<%= hierarchy._id %>" 
+              <%= data?.hierarchy.toString() === hierarchy._id.toString() ? 'selected' : '' %>
+            >
+              <%= hierarchy.type %>
+            </option>
+          <% }) %>
         </select>
         <button class="register-form__submit" type="submit">Register</button>
       </form>
